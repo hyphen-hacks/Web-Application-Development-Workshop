@@ -1,5 +1,4 @@
 /*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
-
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0
@@ -51,16 +50,14 @@ html, body, #app {
   font-size: 1rem;
   font-family: sans-serif;
   color: #101010;
-  overflow: scroll;
-  background: #F0F0F0;
+  overflow: hidden;
 }
 
 #app {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 960px;
   grid-template-rows: auto;
 }
-
 .loader {
   position: absolute;
   width: 100%;
@@ -72,18 +69,12 @@ html, body, #app {
   align-items: center;
   justify-content: center;
 }
-
 .loader p {
   font-weight: bold;
 }
-
-.spacer {
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-
 .app__info {
-  background: white;
+  grid-row: 1/2;
+  grid-column: 1/2;
   z-index: 200;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -91,9 +82,6 @@ html, body, #app {
   padding: 2%;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  height: 100vh;
-  width: 50%;
 }
 
 .app__info .logo {
@@ -123,6 +111,7 @@ html, body, #app {
 .profileImage {
   height: 50px;
   width: 50px;
+
   background-size: cover;
   border-radius: 100px;
 }
@@ -151,25 +140,23 @@ html, body, #app {
 .home {
   grid-row: 1/2;
   grid-column: 2/3;
-  overflow-y: visible;
+  overflow-y: scroll;
   background: #F0F0F0;
   display: flex;
   flex-direction: column;
   padding: 2%;
-  height: auto;
-  padding-bottom: 15%;
 }
 
-.messageRow {
+.home .messageRow {
   width: 100%;
   margin: 1% 0;
-  display: inline-flex;
+  display: flex;
 }
 
 .home .messageRow .message {
   border-radius: 20px;
   margin-left: auto;
-  display: inline;
+  display: inline-block;
   padding: 2%;
   background: #89B1FF;
   color: white;
@@ -195,7 +182,7 @@ html, body, #app {
 .home .sendboxContainer {
   position: fixed;
   bottom: 2%;
-  width: 50vw;
+  width: 960px;
 }
 
 .home .sendBox {

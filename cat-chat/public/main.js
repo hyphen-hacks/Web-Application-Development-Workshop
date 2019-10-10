@@ -60,7 +60,7 @@ var app = new Vue({
             let messageContent = message.val()
             messageContent.you = messageContent.sender.uid !== this.user.uid
             messageContent.timeAgo = moment(messageContent.timestamp).fromNow()
-            this.messages.unshift(messageContent)
+            this.messages.push(messageContent)
           })
         });
       } else {
