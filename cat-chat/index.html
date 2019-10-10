@@ -6,10 +6,14 @@
 </head>
 <body>
 <main id="app">
+  <div v-if="!loaded" class="loader">
+    <img class="logo" src="./assets/logo.png" alt="Cat Chat Logo">
+    <p>Loading</p>
+  </div>
   <div class="app__info">
-    <nav class="app__info__buttonRow">
-      <div class="profileImage"></div>
-      <button class="app__info_buttonRow__logout">Logout</button>
+    <nav v-if="user" class="app__info__buttonRow">
+      <div :style="{backgroundImage: 'url(' + user.photoURL + ')'}" class="profileImage"></div>
+      <button @click="logout" class="app__info_buttonRow__logout">Logout</button>
     </nav>
     <img class="logo" src="./assets/logo.png" alt="Cat Chat Logo">
     <h1 class="brandText">Cat Chat</h1>
@@ -18,26 +22,26 @@
     <small>This site is licensed under Apache 2.0</small>
   </div>
   <div class="home page">
-    <div class="messageRow">
-      <div class="message">
-        <p class="message__text">Hi</p>
-        <p class="message__info">16 min ago - Ronan Furuta</p>
+    <div v-for="message in messages" class="messageRow">
+      <div :class="{you: message.you}" class="message">
+        <p class="message__text">{{message.text}}</p>
+        <p class="message__info">{{message.timeAgo}} - {{message.sender.name}}</p>
       </div>
     </div>
-    <div class="messageRow">
-      <div class="message you">
-        <p class="message__text">Hi</p>
-        <p class="message__info">16 min ago - Ronan Furuta</p>
-      </div>
-    </div>
+
     <div class="sendboxContainer">
-      <form class="sendBox">
-        <input type="text" placeholder="Message">
+      <form @submit.prevent="sendMessage" class="sendBox">
+        <input v-model="messageText" required type="text" placeholder="Message">
         <button class="btn">SEND</button>
       </form>
     </div>
   </div>
 </main>
-
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- not for production -->
+<script src="./main.js"></script>
 </body>
 </html>
