@@ -10,6 +10,7 @@
     <img class="logo" src="./assets/logo.png" alt="Cat Chat Logo">
     <p>Loading</p>
   </div>
+  <div class="spacer"></div>
   <div class="app__info">
     <nav v-if="user" class="app__info__buttonRow">
       <div :style="{backgroundImage: 'url(' + user.photoURL + ')'}" class="profileImage"></div>
@@ -22,12 +23,14 @@
     <small>This site is licensed under Apache 2.0</small>
   </div>
   <div class="home page">
+
     <div v-for="message in messages" class="messageRow">
       <div :class="{you: message.you}" class="message">
         <p class="message__text">{{message.text}}</p>
         <p class="message__info">{{message.timeAgo}} - {{message.sender.name}}</p>
       </div>
     </div>
+
 
     <div class="sendboxContainer">
       <form @submit.prevent="sendMessage" class="sendBox">

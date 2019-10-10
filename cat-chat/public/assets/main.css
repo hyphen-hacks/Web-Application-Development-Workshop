@@ -50,14 +50,16 @@ html, body, #app {
   font-size: 1rem;
   font-family: sans-serif;
   color: #101010;
-  overflow: hidden;
+  overflow: scroll;
+  background: #F0F0F0;
 }
 
 #app {
   display: grid;
-  grid-template-columns: 1fr 960px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 }
+
 .loader {
   position: absolute;
   width: 100%;
@@ -69,12 +71,19 @@ html, body, #app {
   align-items: center;
   justify-content: center;
 }
+
 .loader p {
   font-weight: bold;
 }
-.app__info {
-  grid-row: 1/2;
+
+.spacer {
   grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.app__info {
+
+  background: white;
   z-index: 200;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -82,6 +91,9 @@ html, body, #app {
   padding: 2%;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 50%;
 }
 
 .app__info .logo {
@@ -140,23 +152,27 @@ html, body, #app {
 .home {
   grid-row: 1/2;
   grid-column: 2/3;
-  overflow-y: scroll;
+  overflow-y: visible;
   background: #F0F0F0;
   display: flex;
   flex-direction: column;
   padding: 2%;
+  height: auto;
+  padding-bottom: 15%;
 }
 
-.home .messageRow {
+.messageRow {
   width: 100%;
   margin: 1% 0;
-  display: flex;
+  display: inline-flex;
+
+
 }
 
 .home .messageRow .message {
   border-radius: 20px;
   margin-left: auto;
-  display: inline-block;
+  display: inline;
   padding: 2%;
   background: #89B1FF;
   color: white;
@@ -182,7 +198,7 @@ html, body, #app {
 .home .sendboxContainer {
   position: fixed;
   bottom: 2%;
-  width: 960px;
+  width: 50vw;
 }
 
 .home .sendBox {
