@@ -1,0 +1,242 @@
+/*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
+
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal
+}
+
+ul {
+  list-style: none
+}
+
+button, input, select, textarea {
+  margin: 0
+}
+
+html {
+  box-sizing: border-box
+}
+
+*, *:before, *:after {
+  box-sizing: inherit
+}
+
+img, video {
+  height: auto;
+  max-width: 100%
+}
+
+iframe {
+  border: 0
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+td, th {
+  padding: 0;
+  text-align: left
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: #101010;
+  overflow: scroll;
+  background: #F0F0F0;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 10101010101010110;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader p {
+  font-weight: bold;
+}
+
+.spacer {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.app__info {
+  background: white;
+  z-index: 200;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 50%;
+}
+
+.app__info .logo {
+  height: auto;
+  width: 50%;
+  margin-bottom: 2%;
+}
+
+.app__info .brandText {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+.app__info .desc {
+  margin-bottom: auto;
+  text-align: center;
+  width: 80%;
+}
+
+.app__info__buttonRow {
+  width: 100%;
+  display: flex;
+  margin-bottom: auto;
+}
+
+.profileImage {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  border-radius: 100px;
+}
+
+.app__info_buttonRow__logout {
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+.btn {
+  background: #89B1FF;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1% 3%;
+  border: none;
+  border-radius: 100px;
+  transition-duration: 0.25s;
+}
+
+.btn:hover {
+  background: rgba(137, 177, 255, 0.8);
+}
+
+.padding {
+  padding: 2%;
+}
+
+.home {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  overflow-y: visible;
+  background: #F0F0F0;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  height: auto;
+  padding-bottom: 15%;
+}
+
+.messageRow {
+  width: 100%;
+  margin: 1% 0;
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.messageRow.you {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.home .messageRow .message {
+  border-radius: 20px;
+  display: inline;
+  padding: 2%;
+  background: #89B1FF;
+  color: white;
+  text-align: right;
+  width: auto;
+  overflow: initial;
+  min-width: 200px;
+}
+
+.home .messageRow .message .message__text {
+  font-weight: bold;
+}
+
+.home .messageRow .message .message__info {
+  font-size: 0.7rem;
+}
+
+.home .messageRow .message.you {
+  margin-left: 0;
+  text-align: left;
+  background: white;
+  color: #101010;
+}
+
+.home .sendboxContainer {
+  position: fixed;
+  bottom: 2%;
+  width: 50vw;
+}
+
+.home .sendBox {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
+  background: white;
+  border-radius: 100px;
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  transition-duration: 0.25s;
+}
+
+.home .sendBox .btn {
+  margin: 2%;
+}
+
+.home .sendBox input {
+  margin-left: 2%;
+  background: none;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+}
+
+.home .sendBox input:focus {
+  outline: none;
+}
+
+.home .sendBox:hover {
+  background: #f5f5f5;
+}
