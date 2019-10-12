@@ -148,7 +148,9 @@ html, body, #app {
 .btn:hover {
   background: rgba(137, 177, 255, 0.8);
 }
-
+.padding {
+  padding: 2%;
+}
 .home {
   grid-row: 1/2;
   grid-column: 2/3;
@@ -167,10 +169,12 @@ html, body, #app {
   display: inline-flex;
   justify-content: flex-end;
 
+
 }
 
 .messageRow.you {
   justify-content: flex-start;
+  text-align: left;
 }
 
 .home .messageRow .message {
@@ -182,7 +186,8 @@ html, body, #app {
   color: white;
   text-align: right;
   width: auto;
-  overflow: auto;
+  overflow: initial;
+  min-width: 200px;
 }
 
 .home .messageRow .message .message__text {
@@ -190,8 +195,9 @@ html, body, #app {
 }
 
 .home .messageRow .message .message__info {
-  font-size: 0.8rem;
-  white-space: nowrap;
+  font-size: 0.7rem;
+
+
 
 }
 
