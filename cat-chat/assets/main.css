@@ -165,18 +165,24 @@ html, body, #app {
   width: 100%;
   margin: 1% 0;
   display: inline-flex;
+  justify-content: flex-end;
 
+}
 
+.messageRow.you {
+  justify-content: flex-start;
 }
 
 .home .messageRow .message {
   border-radius: 20px;
-  margin-left: auto;
+
   display: inline;
   padding: 2%;
   background: #89B1FF;
   color: white;
   text-align: right;
+  width: auto;
+  overflow: auto;
 }
 
 .home .messageRow .message .message__text {
@@ -185,10 +191,12 @@ html, body, #app {
 
 .home .messageRow .message .message__info {
   font-size: 0.8rem;
+  white-space: nowrap;
+
 }
 
 .home .messageRow .message.you {
-  margin-right: auto;
+
   margin-left: 0;
   text-align: left;
   background: white;

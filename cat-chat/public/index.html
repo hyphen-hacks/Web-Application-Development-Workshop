@@ -24,7 +24,7 @@
   </div>
   <div class="home page">
 
-    <div v-for="message in messages" class="messageRow">
+    <div v-for="message in messages" :class="{you: message.you}" class="messageRow">
       <div :class="{you: message.you}" class="message">
         <p class="message__text">{{message.text}}</p>
         <p class="message__info">{{message.timeAgo}} - {{message.sender.name}}</p>
